@@ -2,6 +2,31 @@
 
 Professional, mobile-first website for First Coast Home Tech: friendly in-home technology support serving Nassau County and the First Coast, Florida.
 
+## Deployment
+
+The site is automatically deployed to GitHub Pages via the included workflow (`.github/workflows/static.yml`) whenever changes are pushed to the `main` branch.
+
+### Custom domain (firstcoasthometech.com)
+
+A `CNAME` file is included in this repository so GitHub Pages serves the site at **firstcoasthometech.com**. You also need to configure DNS at your domain registrar:
+
+1. **Apex domain (`firstcoasthometech.com`)** — Add four `A` records pointing to GitHub's IPs:
+   ```
+   185.199.108.153
+   185.199.109.153
+   185.199.110.153
+   185.199.111.153
+   ```
+2. **`www` subdomain** — Add a `CNAME` record:
+   ```
+   www  →  wkimball1.github.io
+   ```
+3. **Enable HTTPS** — In your GitHub repository go to **Settings → Pages** and tick *Enforce HTTPS* once DNS has propagated.
+
+> DNS changes can take up to 24–48 hours to propagate worldwide.
+
+---
+
 ## Quick start
 
 1. **Preview locally:** Open `index.html` in a browser, or use a simple local server:
